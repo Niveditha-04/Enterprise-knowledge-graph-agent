@@ -617,7 +617,7 @@ Items honestly not fully tested or not yet fixed — carried forward for the fin
 | 12 | Substring benchmark grading (not semantic / human eval) | Sections 7, 12 | n=23 scored; 2 ambiguous excluded |
 | 13 | End-to-end latency ~6–9s (sequential LLM calls) | Section 11 | Not sub-second interactive UX |
 | 14 | No business KPIs or ROI measured | Section 22 | Framework only; no dollar/time claims |
-| 15 | Token usage instrumented (Section 10) but **no dollar-cost estimate** — real per-request token counts logged, no pricing assumption applied | Section 10 | Distinct from #14; cost-per-query is a likely interview question |
+| 15 | Token usage instrumented (Section 10) but **no dollar-cost estimate** — real per-request token counts logged, no pricing assumption applied | Section 10 | Distinct from #14 |
 | 16 | LLM routing / Cypher non-determinism across API versions | Section 23 | Bounded workflow, not agent |
 | 17 | `test_repair_fails_after_max_retries` still mocks wrapper methods (not `_…_with_usage`) | Section 26 | Same class of test bug as malicious-repair (pre-fix); not yet corrected |
 | 18 | No git repository initialized (pre-commit secret scan uses filesystem walk only) | Section 25 | Operational note for contributors |
@@ -727,7 +727,7 @@ We know because we **triggered each failure** (Chroma: moved `chroma_db` aside; 
 | Chroma retrieval | No LLM | Fixed `n_results=3` |
 | Synthesis | One LLM call | Grounded on provided evidence blocks only |
 
-There is **no planning loop**, no dynamic tool selection, no multi-step reasoning over arbitrary tools, no memory across requests, no goal decomposition, and no agent-chosen iteration count. The pipeline is **predetermined**: classify → (optional graph query) → (optional ticket search) → synthesize. Calling it an "Enterprise Knowledge Graph **Agent**" is a **project name**, not an architecture description. In an interview, say: *"It's a hybrid RAG + graph QA workflow with three fixed branches and bounded repair — not an autonomous agent."*
+There is **no planning loop**, no dynamic tool selection, no multi-step reasoning over arbitrary tools, no memory across requests, no goal decomposition, and no agent-chosen iteration count. The pipeline is **predetermined**: classify → (optional graph query) → (optional ticket search) → synthesize. Calling it an "Enterprise Knowledge Graph **Agent**" is a **project name**, not an architecture description. *"It's a hybrid RAG + graph QA workflow with three fixed branches and bounded repair — not an autonomous agent."*
 
 ---
 
