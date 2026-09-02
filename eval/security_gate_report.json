@@ -1,0 +1,52 @@
+{
+  "section": 25,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "secret_scan",
+      "passed": true,
+      "stdout": "Secret scan passed.",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git"
+    },
+    {
+      "check": "neo4j_call_path_audit",
+      "passed": true,
+      "runtime_paths": [
+        {
+          "file": "agent/nl_to_cypher.py",
+          "session_run": true,
+          "uses_cypher_safety": true,
+          "in_ask_path": true
+        }
+      ],
+      "offline_loaders": [
+        "graph/load_graph.py",
+        "eval/evaluation_audit.py"
+      ],
+      "bypass_risk_note": "A write bypass would be: (1) a bug in cypher_safety.py that fails to reject a mutation, (2) new code calling GraphDatabase.driver().session().run() without validate_read_only_cypher \u2014 e.g. a shortcut in orchestrator or a new API route \u2014 or (3) using the Neo4j credentials directly outside this app (credentials are full-write on Community Edition; see Section 2 / Section 23)."
+    },
+    {
+      "check": "gitignore_sensitive_paths",
+      "passed": true,
+      "required": [
+        ".env",
+        "chroma_db",
+        "venv"
+      ],
+      "found": [
+        ".env",
+        "chroma_db",
+        "venv"
+      ]
+    }
+  ],
+  "manual_security_tests": [
+    "pytest test_cypher_safety.py test_api_security.py test_synthesis_prompt_injection.py -v",
+    "pytest test_error_boundaries.py -v"
+  ],
+  "known_limitations": [
+    "Neo4j Community Edition \u2014 no read-only DB role (Section 2)",
+    "No API authentication (Section 9)",
+    "Cypher validation is application-layer only"
+  ]
+}

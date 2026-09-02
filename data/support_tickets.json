@@ -1,0 +1,1202 @@
+[
+  {
+    "ticket_id":"TCK-1000",
+    "customer_id":"HUNGO",
+    "order_id":10701,
+    "text":"Customer HUNGO reported a delay on order 10701. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1001",
+    "customer_id":"RICSU",
+    "order_id":10666,
+    "text":"Customer RICSU reported a delay on order 10666. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1002",
+    "customer_id":"AROUT",
+    "order_id":10864,
+    "text":"Customer AROUT escalated order 10864 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1003",
+    "customer_id":"VINET",
+    "order_id":10739,
+    "text":"Customer VINET requested invoice correction for order 10739 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1004",
+    "customer_id":"LILAS",
+    "order_id":10357,
+    "text":"Customer LILAS requested invoice correction for order 10357 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1005",
+    "customer_id":"LILAS",
+    "order_id":10997,
+    "text":"Customer LILAS requested invoice correction for order 10997 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1006",
+    "customer_id":"GALED",
+    "order_id":10426,
+    "text":"Customer GALED reported a delay on order 10426. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1007",
+    "customer_id":"RATTC",
+    "order_id":10316,
+    "text":"Customer RATTC disputed a charge on order 10316; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1008",
+    "customer_id":"LAUGB",
+    "order_id":10620,
+    "text":"Customer LAUGB reported a delay on order 10620. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1009",
+    "customer_id":"BERGS",
+    "order_id":10689,
+    "text":"Customer BERGS disputed a charge on order 10689; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1010",
+    "customer_id":"KOENE",
+    "order_id":10323,
+    "text":"Customer KOENE inquired about order 10323 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1011",
+    "customer_id":"LACOR",
+    "order_id":10858,
+    "text":"Customer LACOR reported a delay on order 10858. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1012",
+    "customer_id":"MAISD",
+    "order_id":11004,
+    "text":"Customer MAISD reported a delay on order 11004. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1013",
+    "customer_id":"KOENE",
+    "order_id":10718,
+    "text":"Customer KOENE reported a delay on order 10718. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1014",
+    "customer_id":"NORTS",
+    "order_id":11057,
+    "text":"Customer NORTS requested invoice correction for order 11057 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1015",
+    "customer_id":"SAVEA",
+    "order_id":10398,
+    "text":"Customer SAVEA requested invoice correction for order 10398 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1016",
+    "customer_id":"OCEAN",
+    "order_id":10958,
+    "text":"Customer OCEAN disputed a charge on order 10958; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1017",
+    "customer_id":"QUEEN",
+    "order_id":10659,
+    "text":"Customer QUEEN disputed a charge on order 10659; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1018",
+    "customer_id":"LINOD",
+    "order_id":10919,
+    "text":"Customer LINOD reported a delay on order 10919. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1019",
+    "customer_id":"WILMK",
+    "order_id":10695,
+    "text":"Customer WILMK disputed a charge on order 10695; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1020",
+    "customer_id":"ANATR",
+    "order_id":10625,
+    "text":"Customer ANATR requested invoice correction for order 10625 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1021",
+    "customer_id":"BONAP",
+    "order_id":10755,
+    "text":"Customer BONAP disputed a charge on order 10755; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1022",
+    "customer_id":"SPLIR",
+    "order_id":10974,
+    "text":"Customer SPLIR inquired about order 10974 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1023",
+    "customer_id":"MORGK",
+    "order_id":10945,
+    "text":"Customer MORGK requested invoice correction for order 10945 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1024",
+    "customer_id":"RATTC",
+    "order_id":10294,
+    "text":"Customer RATTC inquired about order 10294 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1025",
+    "customer_id":"FOLIG",
+    "order_id":10763,
+    "text":"Customer FOLIG disputed a charge on order 10763; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1026",
+    "customer_id":"BSBEV",
+    "order_id":10484,
+    "text":"Customer BSBEV escalated order 10484 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1027",
+    "customer_id":"BLONP",
+    "order_id":10436,
+    "text":"Customer BLONP reported a delay on order 10436. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1028",
+    "customer_id":"DUMON",
+    "order_id":10311,
+    "text":"Customer DUMON requested invoice correction for order 10311 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1029",
+    "customer_id":"QUEDE",
+    "order_id":10647,
+    "text":"Customer QUEDE inquired about order 10647 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1030",
+    "customer_id":"LINOD",
+    "order_id":10954,
+    "text":"Customer LINOD escalated order 10954 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1031",
+    "customer_id":"ERNSH",
+    "order_id":10442,
+    "text":"Customer ERNSH escalated order 10442 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1032",
+    "customer_id":"TRAIH",
+    "order_id":10577,
+    "text":"Customer TRAIH requested invoice correction for order 10577 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1033",
+    "customer_id":"LONEP",
+    "order_id":10544,
+    "text":"Customer LONEP requested invoice correction for order 10544 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1034",
+    "customer_id":"BSBEV",
+    "order_id":10471,
+    "text":"Customer BSBEV escalated order 10471 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1035",
+    "customer_id":"CACTU",
+    "order_id":10881,
+    "text":"Customer CACTU reported a delay on order 10881. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1036",
+    "customer_id":"BERGS",
+    "order_id":10924,
+    "text":"Customer BERGS reported a delay on order 10924. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1037",
+    "customer_id":"ISLAT",
+    "order_id":10829,
+    "text":"Customer ISLAT inquired about order 10829 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1038",
+    "customer_id":"MORGK",
+    "order_id":10575,
+    "text":"Customer MORGK reported a delay on order 10575. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1039",
+    "customer_id":"BSBEV",
+    "order_id":10289,
+    "text":"Customer BSBEV escalated order 10289 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1040",
+    "customer_id":"HANAR",
+    "order_id":10903,
+    "text":"Customer HANAR escalated order 10903 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1041",
+    "customer_id":"PICCO",
+    "order_id":11053,
+    "text":"Customer PICCO disputed a charge on order 11053; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1042",
+    "customer_id":"MORGK",
+    "order_id":10699,
+    "text":"Customer MORGK escalated order 10699 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1043",
+    "customer_id":"TOMSP",
+    "order_id":10446,
+    "text":"Customer TOMSP reported a delay on order 10446. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1044",
+    "customer_id":"AROUT",
+    "order_id":11016,
+    "text":"Customer AROUT inquired about order 11016 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1045",
+    "customer_id":"BONAP",
+    "order_id":10511,
+    "text":"Customer BONAP disputed a charge on order 10511; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1046",
+    "customer_id":"WELLI",
+    "order_id":10585,
+    "text":"Customer WELLI reported a delay on order 10585. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1047",
+    "customer_id":"THECR",
+    "order_id":11003,
+    "text":"Customer THECR inquired about order 11003 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1048",
+    "customer_id":"MAISD",
+    "order_id":10896,
+    "text":"Customer MAISD reported a delay on order 10896. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1049",
+    "customer_id":"SAVEA",
+    "order_id":10722,
+    "text":"Customer SAVEA disputed a charge on order 10722; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1050",
+    "customer_id":"HUNGO",
+    "order_id":10646,
+    "text":"Customer HUNGO escalated order 10646 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1051",
+    "customer_id":"GOURL",
+    "order_id":10959,
+    "text":"Customer GOURL disputed a charge on order 10959; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1052",
+    "customer_id":"QUICK",
+    "order_id":10745,
+    "text":"Customer QUICK escalated order 10745 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1053",
+    "customer_id":"BLONP",
+    "order_id":10826,
+    "text":"Customer BLONP disputed a charge on order 10826; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1054",
+    "customer_id":"HUNGO",
+    "order_id":10701,
+    "text":"Customer HUNGO requested invoice correction for order 10701 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1055",
+    "customer_id":"SAVEA",
+    "order_id":10700,
+    "text":"Customer SAVEA reported a delay on order 10700. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1056",
+    "customer_id":"SPECD",
+    "order_id":10907,
+    "text":"Customer SPECD reported a delay on order 10907. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1057",
+    "customer_id":"SUPRD",
+    "order_id":10885,
+    "text":"Customer SUPRD requested invoice correction for order 10885 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1058",
+    "customer_id":"WANDK",
+    "order_id":11046,
+    "text":"Customer WANDK escalated order 11046 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1059",
+    "customer_id":"LILAS",
+    "order_id":10543,
+    "text":"Customer LILAS reported a delay on order 10543. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1060",
+    "customer_id":"GREAL",
+    "order_id":10816,
+    "text":"Customer GREAL requested invoice correction for order 10816 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1061",
+    "customer_id":"LEHMS",
+    "order_id":10534,
+    "text":"Customer LEHMS reported a delay on order 10534. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1062",
+    "customer_id":"SIMOB",
+    "order_id":10802,
+    "text":"Customer SIMOB inquired about order 10802 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1063",
+    "customer_id":"WILMK",
+    "order_id":10873,
+    "text":"Customer WILMK escalated order 10873 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1064",
+    "customer_id":"ALFKI",
+    "order_id":11011,
+    "text":"Customer ALFKI inquired about order 11011 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1065",
+    "customer_id":"HILAA",
+    "order_id":10552,
+    "text":"Customer HILAA escalated order 10552 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1066",
+    "customer_id":"REGGC",
+    "order_id":10562,
+    "text":"Customer REGGC requested invoice correction for order 10562 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1067",
+    "customer_id":"WARTH",
+    "order_id":10455,
+    "text":"Customer WARTH escalated order 10455 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1068",
+    "customer_id":"RATTC",
+    "order_id":10294,
+    "text":"Customer RATTC escalated order 10294 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1069",
+    "customer_id":"ERNSH",
+    "order_id":10442,
+    "text":"Customer ERNSH requested invoice correction for order 10442 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1070",
+    "customer_id":"CONSH",
+    "order_id":10435,
+    "text":"Customer CONSH escalated order 10435 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1071",
+    "customer_id":"PICCO",
+    "order_id":10747,
+    "text":"Customer PICCO reported a delay on order 10747. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1072",
+    "customer_id":"SAVEA",
+    "order_id":10324,
+    "text":"Customer SAVEA disputed a charge on order 10324; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1073",
+    "customer_id":"THECR",
+    "order_id":11003,
+    "text":"Customer THECR requested invoice correction for order 11003 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1074",
+    "customer_id":"WARTH",
+    "order_id":10636,
+    "text":"Customer WARTH disputed a charge on order 10636; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1075",
+    "customer_id":"SIMOB",
+    "order_id":10642,
+    "text":"Customer SIMOB requested invoice correction for order 10642 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1076",
+    "customer_id":"KOENE",
+    "order_id":10817,
+    "text":"Customer KOENE requested invoice correction for order 10817 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1077",
+    "customer_id":"MAISD",
+    "order_id":10892,
+    "text":"Customer MAISD inquired about order 10892 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1078",
+    "customer_id":"OTTIK",
+    "order_id":10999,
+    "text":"Customer OTTIK inquired about order 10999 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1079",
+    "customer_id":"BERGS",
+    "order_id":10875,
+    "text":"Customer BERGS escalated order 10875 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1080",
+    "customer_id":"HUNGO",
+    "order_id":10712,
+    "text":"Customer HUNGO disputed a charge on order 10712; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1081",
+    "customer_id":"BSBEV",
+    "order_id":10289,
+    "text":"Customer BSBEV requested invoice correction for order 10289 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1082",
+    "customer_id":"VAFFE",
+    "order_id":10946,
+    "text":"Customer VAFFE escalated order 10946 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1083",
+    "customer_id":"BONAP",
+    "order_id":10470,
+    "text":"Customer BONAP reported a delay on order 10470. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1084",
+    "customer_id":"RATTC",
+    "order_id":10346,
+    "text":"Customer RATTC requested invoice correction for order 10346 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1085",
+    "customer_id":"HANAR",
+    "order_id":10250,
+    "text":"Customer HANAR reported a delay on order 10250. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1086",
+    "customer_id":"OLDWO",
+    "order_id":11034,
+    "text":"Customer OLDWO escalated order 11034 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1087",
+    "customer_id":"LETSS",
+    "order_id":10884,
+    "text":"Customer LETSS inquired about order 10884 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1088",
+    "customer_id":"TOMSP",
+    "order_id":10438,
+    "text":"Customer TOMSP escalated order 10438 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1089",
+    "customer_id":"RICSU",
+    "order_id":11075,
+    "text":"Customer RICSU reported a delay on order 11075. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1090",
+    "customer_id":"NORTS",
+    "order_id":10517,
+    "text":"Customer NORTS requested invoice correction for order 10517 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1091",
+    "customer_id":"FOLIG",
+    "order_id":10480,
+    "text":"Customer FOLIG disputed a charge on order 10480; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1092",
+    "customer_id":"HANAR",
+    "order_id":10886,
+    "text":"Customer HANAR escalated order 10886 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1093",
+    "customer_id":"LINOD",
+    "order_id":10405,
+    "text":"Customer LINOD requested invoice correction for order 10405 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1094",
+    "customer_id":"LINOD",
+    "order_id":10954,
+    "text":"Customer LINOD inquired about order 10954 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1095",
+    "customer_id":"TOMSP",
+    "order_id":10446,
+    "text":"Customer TOMSP inquired about order 10446 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1096",
+    "customer_id":"MAGAA",
+    "order_id":10404,
+    "text":"Customer MAGAA inquired about order 10404 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1097",
+    "customer_id":"FOLIG",
+    "order_id":10634,
+    "text":"Customer FOLIG requested invoice correction for order 10634 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1098",
+    "customer_id":"PICCO",
+    "order_id":10530,
+    "text":"Customer PICCO escalated order 10530 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1099",
+    "customer_id":"DRACD",
+    "order_id":11067,
+    "text":"Customer DRACD requested invoice correction for order 11067 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1100",
+    "customer_id":"SAVEA",
+    "order_id":10657,
+    "text":"Customer SAVEA requested invoice correction for order 10657 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1101",
+    "customer_id":"BERGS",
+    "order_id":10384,
+    "text":"Customer BERGS disputed a charge on order 10384; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1102",
+    "customer_id":"WHITC",
+    "order_id":10723,
+    "text":"Customer WHITC disputed a charge on order 10723; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1103",
+    "customer_id":"BLONP",
+    "order_id":10297,
+    "text":"Customer BLONP escalated order 10297 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1104",
+    "customer_id":"SANTG",
+    "order_id":10639,
+    "text":"Customer SANTG disputed a charge on order 10639; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1105",
+    "customer_id":"BLAUS",
+    "order_id":10501,
+    "text":"Customer BLAUS inquired about order 10501 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1106",
+    "customer_id":"SUPRD",
+    "order_id":10475,
+    "text":"Customer SUPRD disputed a charge on order 10475; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1107",
+    "customer_id":"SIMOB",
+    "order_id":10642,
+    "text":"Customer SIMOB inquired about order 10642 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1108",
+    "customer_id":"RICSU",
+    "order_id":11033,
+    "text":"Customer RICSU escalated order 11033 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1109",
+    "customer_id":"TOMSP",
+    "order_id":10608,
+    "text":"Customer TOMSP requested invoice correction for order 10608 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1110",
+    "customer_id":"HUNGO",
+    "order_id":10985,
+    "text":"Customer HUNGO requested invoice correction for order 10985 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1111",
+    "customer_id":"LEHMS",
+    "order_id":10772,
+    "text":"Customer LEHMS disputed a charge on order 10772; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1112",
+    "customer_id":"ROMEY",
+    "order_id":10282,
+    "text":"Customer ROMEY inquired about order 10282 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1113",
+    "customer_id":"HILAA",
+    "order_id":10601,
+    "text":"Customer HILAA reported a delay on order 10601. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1114",
+    "customer_id":"VAFFE",
+    "order_id":10921,
+    "text":"Customer VAFFE reported a delay on order 10921. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1115",
+    "customer_id":"HUNGC",
+    "order_id":10600,
+    "text":"Customer HUNGC reported a delay on order 10600. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1116",
+    "customer_id":"LAUGB",
+    "order_id":10810,
+    "text":"Customer LAUGB requested invoice correction for order 10810 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1117",
+    "customer_id":"BONAP",
+    "order_id":10827,
+    "text":"Customer BONAP requested invoice correction for order 10827 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1118",
+    "customer_id":"FOLKO",
+    "order_id":10977,
+    "text":"Customer FOLKO inquired about order 10977 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1119",
+    "customer_id":"MAGAA",
+    "order_id":10300,
+    "text":"Customer MAGAA disputed a charge on order 10300; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1120",
+    "customer_id":"COMMI",
+    "order_id":10290,
+    "text":"Customer COMMI reported a delay on order 10290. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1121",
+    "customer_id":"QUICK",
+    "order_id":10938,
+    "text":"Customer QUICK inquired about order 10938 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1122",
+    "customer_id":"SPECD",
+    "order_id":10738,
+    "text":"Customer SPECD inquired about order 10738 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1123",
+    "customer_id":"ERNSH",
+    "order_id":10776,
+    "text":"Customer ERNSH disputed a charge on order 10776; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1124",
+    "customer_id":"HILAA",
+    "order_id":10613,
+    "text":"Customer HILAA inquired about order 10613 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1125",
+    "customer_id":"WOLZA",
+    "order_id":10906,
+    "text":"Customer WOLZA disputed a charge on order 10906; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1126",
+    "customer_id":"LETSS",
+    "order_id":10735,
+    "text":"Customer LETSS escalated order 10735 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1127",
+    "customer_id":"CONSH",
+    "order_id":10848,
+    "text":"Customer CONSH disputed a charge on order 10848; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1128",
+    "customer_id":"GREAL",
+    "order_id":10936,
+    "text":"Customer GREAL reported a delay on order 10936. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1129",
+    "customer_id":"SPLIR",
+    "order_id":10432,
+    "text":"Customer SPLIR reported a delay on order 10432. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1130",
+    "customer_id":"LAMAI",
+    "order_id":11051,
+    "text":"Customer LAMAI disputed a charge on order 11051; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1131",
+    "customer_id":"QUEEN",
+    "order_id":10728,
+    "text":"Customer QUEEN escalated order 10728 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1132",
+    "customer_id":"WHITC",
+    "order_id":10904,
+    "text":"Customer WHITC escalated order 10904 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1133",
+    "customer_id":"GODOS",
+    "order_id":10872,
+    "text":"Customer GODOS reported a delay on order 10872. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1134",
+    "customer_id":"DRACD",
+    "order_id":10797,
+    "text":"Customer DRACD escalated order 10797 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1135",
+    "customer_id":"WANDK",
+    "order_id":10651,
+    "text":"Customer WANDK inquired about order 10651 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1136",
+    "customer_id":"WILMK",
+    "order_id":11005,
+    "text":"Customer WILMK requested invoice correction for order 11005 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1137",
+    "customer_id":"SAVEA",
+    "order_id":10984,
+    "text":"Customer SAVEA inquired about order 10984 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1138",
+    "customer_id":"RICSU",
+    "order_id":10758,
+    "text":"Customer RICSU reported a delay on order 10758. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1139",
+    "customer_id":"GODOS",
+    "order_id":10550,
+    "text":"Customer GODOS escalated order 10550 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1140",
+    "customer_id":"WOLZA",
+    "order_id":10870,
+    "text":"Customer WOLZA disputed a charge on order 10870; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1141",
+    "customer_id":"BONAP",
+    "order_id":10940,
+    "text":"Customer BONAP requested invoice correction for order 10940 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1142",
+    "customer_id":"ERNSH",
+    "order_id":10895,
+    "text":"Customer ERNSH disputed a charge on order 10895; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1143",
+    "customer_id":"BOTTM",
+    "order_id":10431,
+    "text":"Customer BOTTM reported a delay on order 10431. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1144",
+    "customer_id":"ERNSH",
+    "order_id":11017,
+    "text":"Customer ERNSH escalated order 11017 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1145",
+    "customer_id":"COMMI",
+    "order_id":11042,
+    "text":"Customer COMMI disputed a charge on order 11042; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1146",
+    "customer_id":"VAFFE",
+    "order_id":10465,
+    "text":"Customer VAFFE disputed a charge on order 10465; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1147",
+    "customer_id":"WHITC",
+    "order_id":10504,
+    "text":"Customer WHITC requested invoice correction for order 10504 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1148",
+    "customer_id":"WOLZA",
+    "order_id":10374,
+    "text":"Customer WOLZA requested invoice correction for order 10374 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1149",
+    "customer_id":"BONAP",
+    "order_id":10932,
+    "text":"Customer BONAP escalated order 10932 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1150",
+    "customer_id":"THECR",
+    "order_id":10624,
+    "text":"Customer THECR requested invoice correction for order 10624 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1151",
+    "customer_id":"FRANK",
+    "order_id":10791,
+    "text":"Customer FRANK disputed a charge on order 10791; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1152",
+    "customer_id":"SANTG",
+    "order_id":10831,
+    "text":"Customer SANTG disputed a charge on order 10831; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1153",
+    "customer_id":"RATTC",
+    "order_id":10569,
+    "text":"Customer RATTC reported a delay on order 10569. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1154",
+    "customer_id":"ISLAT",
+    "order_id":10621,
+    "text":"Customer ISLAT disputed a charge on order 10621; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1155",
+    "customer_id":"GREAL",
+    "order_id":10936,
+    "text":"Customer GREAL escalated order 10936 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1156",
+    "customer_id":"HILAA",
+    "order_id":10863,
+    "text":"Customer HILAA inquired about order 10863 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1157",
+    "customer_id":"LONEP",
+    "order_id":10307,
+    "text":"Customer LONEP reported a delay on order 10307. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1158",
+    "customer_id":"FAMIA",
+    "order_id":10581,
+    "text":"Customer FAMIA reported a delay on order 10581. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1159",
+    "customer_id":"VAFFE",
+    "order_id":10994,
+    "text":"Customer VAFFE escalated order 10994 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1160",
+    "customer_id":"GREAL",
+    "order_id":10617,
+    "text":"Customer GREAL escalated order 10617 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1161",
+    "customer_id":"SPLIR",
+    "order_id":10821,
+    "text":"Customer SPLIR requested invoice correction for order 10821 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1162",
+    "customer_id":"PICCO",
+    "order_id":10747,
+    "text":"Customer PICCO reported a delay on order 10747. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1163",
+    "customer_id":"LEHMS",
+    "order_id":10593,
+    "text":"Customer LEHMS requested invoice correction for order 10593 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1164",
+    "customer_id":"WELLI",
+    "order_id":10809,
+    "text":"Customer WELLI disputed a charge on order 10809; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1165",
+    "customer_id":"BLONP",
+    "order_id":10297,
+    "text":"Customer BLONP reported a delay on order 10297. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1166",
+    "customer_id":"HILAA",
+    "order_id":10901,
+    "text":"Customer HILAA reported a delay on order 10901. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1167",
+    "customer_id":"PICCO",
+    "order_id":11053,
+    "text":"Customer PICCO inquired about order 11053 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1168",
+    "customer_id":"FRANK",
+    "order_id":10791,
+    "text":"Customer FRANK reported a delay on order 10791. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1169",
+    "customer_id":"SIMOB",
+    "order_id":10341,
+    "text":"Customer SIMOB disputed a charge on order 10341; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1170",
+    "customer_id":"BERGS",
+    "order_id":10672,
+    "text":"Customer BERGS requested invoice correction for order 10672 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1171",
+    "customer_id":"TRADH",
+    "order_id":10830,
+    "text":"Customer TRADH requested invoice correction for order 10830 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1172",
+    "customer_id":"LACOR",
+    "order_id":10927,
+    "text":"Customer LACOR inquired about order 10927 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1173",
+    "customer_id":"VICTE",
+    "order_id":10459,
+    "text":"Customer VICTE disputed a charge on order 10459; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1174",
+    "customer_id":"SUPRD",
+    "order_id":10475,
+    "text":"Customer SUPRD requested invoice correction for order 10475 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1175",
+    "customer_id":"SAVEA",
+    "order_id":10722,
+    "text":"Customer SAVEA escalated order 10722 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1176",
+    "customer_id":"GREAL",
+    "order_id":10681,
+    "text":"Customer GREAL disputed a charge on order 10681; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1177",
+    "customer_id":"ANATR",
+    "order_id":10926,
+    "text":"Customer ANATR disputed a charge on order 10926; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1178",
+    "customer_id":"FRANR",
+    "order_id":10971,
+    "text":"Customer FRANR inquired about order 10971 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1179",
+    "customer_id":"MAGAA",
+    "order_id":10404,
+    "text":"Customer MAGAA requested invoice correction for order 10404 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1180",
+    "customer_id":"FOLKO",
+    "order_id":10977,
+    "text":"Customer FOLKO disputed a charge on order 10977; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1181",
+    "customer_id":"RATTC",
+    "order_id":10820,
+    "text":"Customer RATTC requested invoice correction for order 10820 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1182",
+    "customer_id":"QUICK",
+    "order_id":10273,
+    "text":"Customer QUICK escalated order 10273 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1183",
+    "customer_id":"HUNGO",
+    "order_id":10298,
+    "text":"Customer HUNGO inquired about order 10298 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1184",
+    "customer_id":"SPLIR",
+    "order_id":10329,
+    "text":"Customer SPLIR escalated order 10329 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1185",
+    "customer_id":"BONAP",
+    "order_id":10715,
+    "text":"Customer BONAP inquired about order 10715 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1186",
+    "customer_id":"HANAR",
+    "order_id":10250,
+    "text":"Customer HANAR disputed a charge on order 10250; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1187",
+    "customer_id":"ERNSH",
+    "order_id":10430,
+    "text":"Customer ERNSH inquired about order 10430 status, no response after 3 business days."
+  },
+  {
+    "ticket_id":"TCK-1188",
+    "customer_id":"WANDK",
+    "order_id":10301,
+    "text":"Customer WANDK reported a delay on order 10301. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1189",
+    "customer_id":"BSBEV",
+    "order_id":11023,
+    "text":"Customer BSBEV requested invoice correction for order 11023 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1190",
+    "customer_id":"WANDK",
+    "order_id":10301,
+    "text":"Customer WANDK requested invoice correction for order 10301 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1191",
+    "customer_id":"VICTE",
+    "order_id":10334,
+    "text":"Customer VICTE reported a delay on order 10334. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1192",
+    "customer_id":"QUICK",
+    "order_id":10938,
+    "text":"Customer QUICK escalated order 10938 \u2014 product arrived damaged, replacement requested."
+  },
+  {
+    "ticket_id":"TCK-1193",
+    "customer_id":"TOMSP",
+    "order_id":10249,
+    "text":"Customer TOMSP reported a delay on order 10249. Investigating carrier issue."
+  },
+  {
+    "ticket_id":"TCK-1194",
+    "customer_id":"PERIC",
+    "order_id":10354,
+    "text":"Customer PERIC disputed a charge on order 10354; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1195",
+    "customer_id":"QUICK",
+    "order_id":10549,
+    "text":"Customer QUICK disputed a charge on order 10549; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1196",
+    "customer_id":"SAVEA",
+    "order_id":11002,
+    "text":"Customer SAVEA requested invoice correction for order 11002 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1197",
+    "customer_id":"BLONP",
+    "order_id":10628,
+    "text":"Customer BLONP disputed a charge on order 10628; refund under review."
+  },
+  {
+    "ticket_id":"TCK-1198",
+    "customer_id":"SUPRD",
+    "order_id":10463,
+    "text":"Customer SUPRD requested invoice correction for order 10463 due to pricing discrepancy."
+  },
+  {
+    "ticket_id":"TCK-1199",
+    "customer_id":"FOLKO",
+    "order_id":10460,
+    "text":"Customer FOLKO reported a delay on order 10460. Investigating carrier issue."
+  }
+]

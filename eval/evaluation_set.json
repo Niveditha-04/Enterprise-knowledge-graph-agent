@@ -1,0 +1,347 @@
+[
+  {
+    "id": "count_alfki_orders",
+    "question": "How many orders has customer ALFKI placed?",
+    "expected_answer_contains": "6",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {customer_id: 'ALFKI'})-[:PLACED]->(o:Order) RETURN count(o) AS n",
+      "value": "6"
+    }
+  },
+  {
+    "id": "count_germany_customers",
+    "question": "How many customers are in Germany?",
+    "expected_answer_contains": "11",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {country: 'Germany'}) RETURN count(c) AS n",
+      "value": "11"
+    }
+  },
+  {
+    "id": "count_total_orders",
+    "question": "How many total orders are in the system?",
+    "expected_answer_contains": "830",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (o:Order) RETURN count(o) AS n",
+      "value": "830"
+    }
+  },
+  {
+    "id": "count_customers",
+    "question": "How many customers are there?",
+    "expected_answer_contains": "91",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer) RETURN count(c) AS n",
+      "value": "91"
+    }
+  },
+  {
+    "id": "lookup_chai_product_id",
+    "question": "What is the product ID for Chai?",
+    "expected_answer_contains": "1",
+    "category": "entity_lookup",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (p:Product {product_name: 'Chai'}) RETURN p.product_id AS id",
+      "value": "1"
+    }
+  },
+  {
+    "id": "traverse_chai_orders",
+    "question": "How many orders contain the product Chai?",
+    "expected_answer_contains": "38",
+    "category": "graph_traversal",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (o:Order)-[:CONTAINS]->(p:Product {product_name: 'Chai'}) RETURN count(DISTINCT o) AS n",
+      "value": "38"
+    }
+  },
+  {
+    "id": "agg_top_ordering_customer",
+    "question": "Which customer has placed the most orders?",
+    "expected_answer_contains": "SAVEA",
+    "category": "aggregation",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:PLACED]->(o:Order) WITH c, count(o) AS n RETURN c.customer_id AS id ORDER BY n DESC LIMIT 1",
+      "value": "SAVEA"
+    }
+  },
+  {
+    "id": "count_support_tickets",
+    "question": "How many support tickets are there?",
+    "expected_answer_contains": "200",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (t:SupportTicket) RETURN count(t) AS n",
+      "value": "200"
+    }
+  },
+  {
+    "id": "agg_multi_ticket_customers",
+    "question": "How many customers have filed more than one support ticket?",
+    "expected_answer_contains": "52",
+    "category": "aggregation",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:FILED]->(t:SupportTicket) WITH c, count(t) AS n WHERE n > 1 RETURN count(c) AS n",
+      "value": "52"
+    }
+  },
+  {
+    "id": "filter_france_customers",
+    "question": "How many customers are in France?",
+    "expected_answer_contains": "11",
+    "category": "filtering",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {country: 'France'}) RETURN count(c) AS n",
+      "value": "11"
+    }
+  },
+  {
+    "id": "lookup_order_10248_customer",
+    "question": "Which customer placed order 10248?",
+    "expected_answer_contains": "VINET",
+    "category": "entity_lookup",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:PLACED]->(o:Order {order_id: 10248}) RETURN c.customer_id AS id",
+      "value": "VINET"
+    }
+  },
+  {
+    "id": "count_products",
+    "question": "How many products are in the catalog?",
+    "expected_answer_contains": "77",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (p:Product) RETURN count(p) AS n",
+      "value": "77"
+    }
+  },
+  {
+    "id": "agg_most_expensive_product",
+    "question": "What is the most expensive product?",
+    "expected_answer_contains": "Côte de Blaye",
+    "category": "aggregation",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (p:Product) RETURN p.product_name AS name ORDER BY p.unit_price DESC LIMIT 1",
+      "value": "Côte de Blaye"
+    }
+  },
+  {
+    "id": "filter_brazil_customers",
+    "question": "How many customers are in Brazil?",
+    "expected_answer_contains": "9",
+    "category": "filtering",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {country: 'Brazil'}) RETURN count(c) AS n",
+      "value": "9"
+    }
+  },
+  {
+    "id": "count_vinet_orders",
+    "question": "How many orders has customer VINET placed?",
+    "expected_answer_contains": "5",
+    "category": "counting",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {customer_id: 'VINET'})-[:PLACED]->(o:Order) RETURN count(o) AS n",
+      "value": "5"
+    }
+  },
+  {
+    "id": "ticket_damaged_products",
+    "question": "Which tickets mention damaged products?",
+    "expected_answer_contains": "damaged",
+    "category": "ticket_retrieval",
+    "primary_route": "TICKETS",
+    "scored": true,
+    "ground_truth": {
+      "source": "tickets",
+      "rule": "text contains 'damaged' (case-insensitive)",
+      "value": "38 tickets"
+    }
+  },
+  {
+    "id": "ticket_carrier_delays",
+    "question": "Which orders had carrier delay issues?",
+    "expected_answer_contains": "carrier",
+    "category": "ticket_retrieval",
+    "primary_route": "TICKETS",
+    "scored": true,
+    "ground_truth": {
+      "source": "tickets",
+      "rule": "text contains 'carrier' (case-insensitive)",
+      "value": "43 tickets"
+    }
+  },
+  {
+    "id": "hybrid_chai_damaged_count",
+    "question": "How many distinct customers ordered Chai and also filed support tickets about damaged products?",
+    "expected_answer_contains": "14",
+    "category": "hybrid",
+    "primary_route": "BOTH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:PLACED]->(:Order)-[:CONTAINS]->(:Product {product_name: 'Chai'}), (c)-[:FILED]->(t:SupportTicket) WHERE toLower(t.text) CONTAINS 'damaged' RETURN count(DISTINCT c) AS n",
+      "value": "14"
+    }
+  },
+  {
+    "id": "hybrid_savea_carrier_ticket",
+    "question": "Did customer SAVEA file any support tickets mentioning carrier delays?",
+    "expected_answer_contains": "carrier",
+    "category": "hybrid",
+    "primary_route": "BOTH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer {customer_id: 'SAVEA'})-[:FILED]->(t:SupportTicket) WHERE toLower(t.text) CONTAINS 'carrier' RETURN count(t) AS n",
+      "value": "1"
+    }
+  },
+  {
+    "id": "hybrid_chai_damaged_example",
+    "question": "Name one customer who ordered Chai and filed a ticket about damaged products.",
+    "accepted_answer_contains": [
+      "BERGS",
+      "BLONP",
+      "GODOS",
+      "GREAL",
+      "HILAA",
+      "HUNGO",
+      "LINOD",
+      "QUEEN",
+      "QUICK",
+      "RATTC",
+      "SAVEA",
+      "WANDK",
+      "WARTH",
+      "WILMK"
+    ],
+    "category": "hybrid",
+    "primary_route": "BOTH",
+    "scored": true,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:PLACED]->(:Order)-[:CONTAINS]->(:Product {product_name: 'Chai'}), (c)-[:FILED]->(t:SupportTicket) WHERE toLower(t.text) CONTAINS 'damaged' RETURN c.customer_id AS id ORDER BY id LIMIT 1",
+      "value": "BERGS"
+    },
+    "notes": "14 customers qualify; any of them is semantically correct, substring check uses first by id."
+  },
+  {
+    "id": "ticket_vinet_invoice",
+    "question": "Did customer VINET request an invoice correction in a support ticket?",
+    "expected_answer_contains": "invoice",
+    "category": "ticket_retrieval",
+    "primary_route": "TICKETS",
+    "scored": true,
+    "ground_truth": {
+      "source": "tickets",
+      "rule": "customer_id == VINET AND text contains 'invoice correction'",
+      "value": "TCK-1003"
+    }
+  },
+  {
+    "id": "ambiguous_order_10864",
+    "question": "What happened with order 10864?",
+    "expected_answer_contains": "damaged",
+    "category": "ambiguous",
+    "primary_route": "TICKETS",
+    "scored": false,
+    "ground_truth": {
+      "source": "tickets",
+      "rule": "order_id == 10864",
+      "value": "TCK-1002 mentions damaged product"
+    },
+    "notes": "Defensible routes: TICKETS or BOTH. Retrieval may miss TCK-1002 (documented Section 6 failure)."
+  },
+  {
+    "id": "ambiguous_busiest_customer_country",
+    "question": "What country is our busiest customer from?",
+    "expected_answer_contains": "USA",
+    "category": "ambiguous",
+    "primary_route": "GRAPH",
+    "scored": false,
+    "ground_truth": {
+      "source": "neo4j",
+      "query": "MATCH (c:Customer)-[:PLACED]->(o:Order) WITH c, count(o) AS n ORDER BY n DESC LIMIT 1 RETURN c.country AS country",
+      "value": "USA"
+    },
+    "notes": "'Busiest' could mean most orders (SAVEA, USA) or most tickets — not scored."
+  },
+  {
+    "id": "unsupported_ceo_email",
+    "question": "What is the CEO's email address?",
+    "category": "unsupported",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "score_type": "refusal",
+    "refusal_substrings": ["insufficient", "no evidence", "cannot", "not available", "do not have"],
+    "ground_truth": {
+      "source": "none",
+      "rule": "No CEO or email field exists in graph or tickets",
+      "value": "unanswerable"
+    }
+  },
+  {
+    "id": "unsupported_employee_count",
+    "question": "How many employees work at the company?",
+    "category": "unsupported",
+    "primary_route": "GRAPH",
+    "scored": true,
+    "score_type": "refusal",
+    "refusal_substrings": ["insufficient", "no evidence", "cannot", "not available", "do not have", "not loaded"],
+    "ground_truth": {
+      "source": "none",
+      "rule": "Employee nodes are defined in ontology but not loaded into Neo4j",
+      "value": "unanswerable"
+    }
+  }
+]

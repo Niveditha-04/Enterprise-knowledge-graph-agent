@@ -1,0 +1,257 @@
+{
+  "current_counts": {
+    "Customer": 91,
+    "Order": 830,
+    "Product": 77,
+    "SupportTicket": 200,
+    "PLACED": 830,
+    "CONTAINS": 2155,
+    "FILED": 200,
+    "REFERENCES": 200
+  },
+  "constraints": [
+    {
+      "id": 4,
+      "name": "customer_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Customer"
+      ],
+      "properties": [
+        "customer_id"
+      ],
+      "ownedIndex": "customer_id",
+      "propertyType": null
+    },
+    {
+      "id": 6,
+      "name": "order_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Order"
+      ],
+      "properties": [
+        "order_id"
+      ],
+      "ownedIndex": "order_id",
+      "propertyType": null
+    },
+    {
+      "id": 8,
+      "name": "product_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Product"
+      ],
+      "properties": [
+        "product_id"
+      ],
+      "ownedIndex": "product_id",
+      "propertyType": null
+    },
+    {
+      "id": 10,
+      "name": "ticket_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "SupportTicket"
+      ],
+      "properties": [
+        "ticket_id"
+      ],
+      "ownedIndex": "ticket_id",
+      "propertyType": null
+    }
+  ],
+  "operational_indexes": [
+    {
+      "id": 3,
+      "name": "customer_id",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Customer"
+      ],
+      "properties": [
+        "customer_id"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "customer_id",
+      "lastRead": "2026-09-02T14:49:32.451000000+00:00",
+      "readCount": 1360
+    },
+    {
+      "id": 5,
+      "name": "order_id",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Order"
+      ],
+      "properties": [
+        "order_id"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "order_id",
+      "lastRead": "2026-09-02T14:49:13.958000000+00:00",
+      "readCount": 4871
+    },
+    {
+      "id": 7,
+      "name": "product_id",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Product"
+      ],
+      "properties": [
+        "product_id"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "product_id",
+      "lastRead": "2026-09-02T14:48:53.614000000+00:00",
+      "readCount": 2391
+    },
+    {
+      "id": 9,
+      "name": "ticket_id",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "SupportTicket"
+      ],
+      "properties": [
+        "ticket_id"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "ticket_id",
+      "lastRead": "2026-09-02T06:48:34.014000000+00:00",
+      "readCount": 600
+    }
+  ],
+  "lookup_indexes": [
+    {
+      "id": 1,
+      "name": "index_343aff4e",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "LOOKUP",
+      "entityType": "NODE",
+      "labelsOrTypes": null,
+      "properties": null,
+      "indexProvider": "token-lookup-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-09-02T14:49:37.144000000+00:00",
+      "readCount": 231
+    },
+    {
+      "id": 2,
+      "name": "index_f7700477",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "LOOKUP",
+      "entityType": "RELATIONSHIP",
+      "labelsOrTypes": null,
+      "properties": null,
+      "indexProvider": "token-lookup-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    }
+  ],
+  "missing_indexes_for_eval_patterns": [
+    "Customer.country (used by filter_brazil, filter_germany semantic cases)",
+    "Product.product_name (used by multihop_ticket_chai_* and traversal cases)",
+    "SupportTicket.text \u2014 not indexed in Neo4j; ticket body search is ChromaDB's job"
+  ],
+  "query_patterns": [
+    {
+      "id": "point_customer",
+      "category": "point_lookup",
+      "example": "MATCH (c:Customer {customer_id: 'ALFKI'}) RETURN c.country",
+      "index_use": "customer_id uniqueness \u2192 RANGE index",
+      "scales_with": "O(log customers) \u2014 fine at 10M+ customers"
+    },
+    {
+      "id": "point_order",
+      "category": "point_lookup",
+      "example": "MATCH (o:Order {order_id: 10248})-[:CONTAINS]->(p:Product) RETURN p",
+      "index_use": "order_id uniqueness \u2192 RANGE index",
+      "scales_with": "O(log orders + degree of order) \u2014 fine at 10M+ orders"
+    },
+    {
+      "id": "customer_order_count",
+      "category": "scoped_traversal",
+      "example": "MATCH (c:Customer {customer_id: 'VINET'})-[:PLACED]->(o) RETURN count(o)",
+      "index_use": "customer_id index anchors traversal",
+      "scales_with": "O(customer order volume), not global order count"
+    },
+    {
+      "id": "count_global",
+      "category": "global_scan",
+      "example": "MATCH (c:Customer) RETURN count(c)",
+      "index_use": "label scan (no property index needed for pure count)",
+      "scales_with": "O(nodes of label) \u2014 linear; acceptable to ~low millions on modest hardware"
+    },
+    {
+      "id": "agg_top_customer",
+      "category": "global_aggregation",
+      "example": "MATCH (c:Customer)-[:PLACED]->(o) RETURN c.customer_id, count(o) ORDER BY count(o) DESC LIMIT 1",
+      "index_use": "traverses all PLACED edges",
+      "scales_with": "O(orders) \u2014 dominant cost at 1M\u201310M; may need pre-aggregation or limits"
+    },
+    {
+      "id": "filter_country",
+      "category": "property_filter",
+      "example": "MATCH (c:Customer) WHERE c.country = 'Brazil' RETURN count(c)",
+      "index_use": "no index on country today \u2014 full Customer label scan + filter",
+      "scales_with": "O(customers); add RANGE index on country before 100K+ customers if common"
+    },
+    {
+      "id": "product_name_join",
+      "category": "property_filter + join",
+      "example": "MATCH (p:Product) WHERE p.product_name CONTAINS 'Chai' MATCH (o)-[:CONTAINS]->(p) RETURN count(DISTINCT o)",
+      "index_use": "no index on product_name \u2014 scans Product then expands CONTAINS",
+      "scales_with": "O(products + matching line items); text index at 1M+ orders if product-filter queries are frequent"
+    }
+  ],
+  "scale_projections": {
+    "100_000_orders": {
+      "tier": "100K",
+      "projected_orders": "100000",
+      "projected_contains": "259639",
+      "projected_customers": "10964",
+      "graph_query_outlook": "Current id indexes suffice for NL\u2192Cypher point lookups and scoped traversals. Global counts/aggregations remain sub-second on single-instance Neo4j. Loader row-by-row ingest becomes the operational bottleneck before query-time indexes do.",
+      "index_recommendations": "Optional: RANGE index on Customer.country if country-filter questions stay common. Batch UNWIND loader for ingest."
+    },
+    "1_000_000_orders": {
+      "tier": "1M",
+      "projected_orders": "1000000",
+      "projected_contains": "2596386",
+      "projected_customers": "109639",
+      "graph_query_outlook": "Id-anchored queries still healthy. Global top-customer aggregation scans ~1M PLACED edges \u2014 noticeable but usually acceptable on indexed ids + adequate RAM. Product-name filters without an index scan the catalog then fan out on CONTAINS.",
+      "index_recommendations": "Add RANGE or TEXT index on Product.product_name if name-based joins are frequent. Consider RANGE on Customer.country. Monitor agg query latency; cap NL\u2192Cypher result limits (already 100)."
+    },
+    "10_000_000_orders": {
+      "tier": "10M",
+      "projected_orders": "10000000",
+      "projected_contains": "25963855",
+      "projected_customers": "1096386",
+      "graph_query_outlook": "Point lookups by order_id/customer_id remain viable with existing uniqueness constraints. Global aggregations and unindexed property filters become the primary risk \u2014 not NL\u2192Cypher quality but Cypher execution time and heap pressure (~26M CONTAINS at demo line-item ratio).",
+      "index_recommendations": "Require ingest pipeline redesign (bulk load), likely read replicas, and precomputed rollups (orders per customer, catalog stats) for dashboard-style questions. Ticket text stays in Chroma \u2014 graph scale does not bound ticket RAG."
+    }
+  },
+  "loader_note": "graph/load_graph.py issues one session.run per row \u2014 ~3k writes today, would be prohibitive at 1M+ orders without UNWIND batching or neo4j-admin import."
+}

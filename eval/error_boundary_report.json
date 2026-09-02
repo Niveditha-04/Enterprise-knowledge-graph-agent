@@ -1,0 +1,65 @@
+{
+  "chroma_unavailable": {
+    "orchestrator": {
+      "raised": true,
+      "type": "ValueError",
+      "message": "Collection support_tickets does not exist."
+    },
+    "api": {
+      "status_code": 500,
+      "body": {
+        "detail": "An internal error occurred while processing the request."
+      }
+    }
+  },
+  "anthropic_529": {
+    "orchestrator": {
+      "raised": true,
+      "type": "APIStatusError",
+      "status_code": 529,
+      "message": "Overloaded",
+      "user_facing": "none \u2014 exception propagates from classify_question"
+    },
+    "api": {
+      "status_code": 500,
+      "body": {
+        "detail": "An internal error occurred while processing the request."
+      },
+      "user_facing": "An internal error occurred while processing the request."
+    },
+    "eval_harness": {
+      "raised": true,
+      "type": "EvaluationAbortedDueToRateLimit",
+      "message": "Anthropic API server-side capacity error persisted after 2 retries: 529",
+      "user_facing": "evaluation abort \u2014 not an /ask response"
+    },
+    "note": "Orchestrator and /ask have no Anthropic retry. Retries exist only in eval harnesses (eval/api_pacing.py, eval/latency_benchmark.py). Real 529 log: eval/latency_benchmark_run.log."
+  },
+  "malformed_cypher": {
+    "graph_result": {
+      "error": "Invalid input 'RETURN': expected 'ORDER BY'",
+      "results": null,
+      "repair_attempts": 1,
+      "cypher": "MATCH (c:Customer)\nWITH count(c) AS customer_count\nRETURN customer_count\nLIMIT 100"
+    },
+    "synthesis": {
+      "answer": "There is insufficient evidence to answer this question. The graph query failed and no ticket evidence is available.",
+      "insufficient_evidence": true
+    },
+    "tests": "test_nl_to_cypher_repair.py (repair success, max retries, malicious repair blocked)",
+    "max_cypher_retries": 1
+  },
+  "neo4j_unavailable": {
+    "covered_in": "Section 9 / test_api_security.py::test_graph_dependency_error_is_sanitized",
+    "http_status": 200,
+    "graph_result_error": "Graph database is currently unavailable.",
+    "synthesis": "insufficient evidence (mocked in test)",
+    "note": "NL\u2192Cypher catches Neo4j errors in graph_result.error; api/security.py sanitizes connection failures."
+  },
+  "robustness_summary": {
+    "strongest": "Neo4j down \u2192 graph_result.error + sanitized 200 response",
+    "moderate": "Malformed Cypher \u2192 repair loop then graph_result.error; synthesis refuses",
+    "weakest": "Chroma down and Anthropic 529 \u2192 uncaught in orchestrator \u2192 HTTP 500 generic detail",
+    "recurring_failure_class": "Section 15 (prompt-only warnings) and Section 17 (Chroma add no-op) are silent non-enforcement; Section 19 adds hard 500s for Chroma/Anthropic outages."
+  }
+}

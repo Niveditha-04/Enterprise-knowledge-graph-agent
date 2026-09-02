@@ -1,0 +1,193 @@
+{
+  "total_items": 25,
+  "scored_items": 23,
+  "ambiguous_items": 2,
+  "unsupported_items": 2,
+  "ground_truth_verified": 25,
+  "ground_truth_failed": 0,
+  "verifications": [
+    {
+      "id": "count_alfki_orders",
+      "source": "neo4j",
+      "expected": "6",
+      "actual": "6",
+      "verified": true
+    },
+    {
+      "id": "count_germany_customers",
+      "source": "neo4j",
+      "expected": "11",
+      "actual": "11",
+      "verified": true
+    },
+    {
+      "id": "count_total_orders",
+      "source": "neo4j",
+      "expected": "830",
+      "actual": "830",
+      "verified": true
+    },
+    {
+      "id": "count_customers",
+      "source": "neo4j",
+      "expected": "91",
+      "actual": "91",
+      "verified": true
+    },
+    {
+      "id": "lookup_chai_product_id",
+      "source": "neo4j",
+      "expected": "1",
+      "actual": "1",
+      "verified": true
+    },
+    {
+      "id": "traverse_chai_orders",
+      "source": "neo4j",
+      "expected": "38",
+      "actual": "38",
+      "verified": true
+    },
+    {
+      "id": "agg_top_ordering_customer",
+      "source": "neo4j",
+      "expected": "SAVEA",
+      "actual": "SAVEA",
+      "verified": true
+    },
+    {
+      "id": "count_support_tickets",
+      "source": "neo4j",
+      "expected": "200",
+      "actual": "200",
+      "verified": true
+    },
+    {
+      "id": "agg_multi_ticket_customers",
+      "source": "neo4j",
+      "expected": "52",
+      "actual": "52",
+      "verified": true
+    },
+    {
+      "id": "filter_france_customers",
+      "source": "neo4j",
+      "expected": "11",
+      "actual": "11",
+      "verified": true
+    },
+    {
+      "id": "lookup_order_10248_customer",
+      "source": "neo4j",
+      "expected": "VINET",
+      "actual": "VINET",
+      "verified": true
+    },
+    {
+      "id": "count_products",
+      "source": "neo4j",
+      "expected": "77",
+      "actual": "77",
+      "verified": true
+    },
+    {
+      "id": "agg_most_expensive_product",
+      "source": "neo4j",
+      "expected": "C\u00f4te de Blaye",
+      "actual": "C\u00f4te de Blaye",
+      "verified": true
+    },
+    {
+      "id": "filter_brazil_customers",
+      "source": "neo4j",
+      "expected": "9",
+      "actual": "9",
+      "verified": true
+    },
+    {
+      "id": "count_vinet_orders",
+      "source": "neo4j",
+      "expected": "5",
+      "actual": "5",
+      "verified": true
+    },
+    {
+      "id": "ticket_damaged_products",
+      "source": "tickets",
+      "expected": "38 tickets",
+      "actual": "38 tickets",
+      "verified": true
+    },
+    {
+      "id": "ticket_carrier_delays",
+      "source": "tickets",
+      "expected": "43 tickets",
+      "actual": "43 tickets",
+      "verified": true
+    },
+    {
+      "id": "hybrid_chai_damaged_count",
+      "source": "neo4j",
+      "expected": "14",
+      "actual": "14",
+      "verified": true
+    },
+    {
+      "id": "hybrid_savea_carrier_ticket",
+      "source": "neo4j",
+      "expected": "1",
+      "actual": "1",
+      "verified": true
+    },
+    {
+      "id": "hybrid_chai_damaged_example",
+      "source": "neo4j",
+      "expected": "BERGS",
+      "actual": "BERGS",
+      "verified": true
+    },
+    {
+      "id": "ticket_vinet_invoice",
+      "source": "tickets",
+      "expected": "TCK-1003",
+      "actual": "TCK-1003",
+      "verified": true
+    },
+    {
+      "id": "ambiguous_order_10864",
+      "source": "tickets",
+      "expected": "TCK-1002 mentions damaged product",
+      "actual": "TCK-1002",
+      "verified": true
+    },
+    {
+      "id": "ambiguous_busiest_customer_country",
+      "source": "neo4j",
+      "expected": "USA",
+      "actual": "USA",
+      "verified": true
+    },
+    {
+      "id": "unsupported_ceo_email",
+      "source": "none",
+      "expected": "unanswerable",
+      "actual": "unanswerable",
+      "verified": true
+    },
+    {
+      "id": "unsupported_employee_count",
+      "source": "none",
+      "expected": "unanswerable",
+      "actual": "unanswerable",
+      "verified": true
+    }
+  ],
+  "methodology_notes": {
+    "matching": "Substring match on graph values + retrieved ticket text (case-insensitive). Not semantic grading.",
+    "false_positive_risk": "Short numeric substrings can match unrelated numbers (e.g. '1' in '10248').",
+    "false_negative_risk": "Unicode normalization (e.g. C\u00f4te de Blaye) and paraphrased correct answers fail substring checks.",
+    "baseline_fairness": "Flat RAG indexes one sentence per order only \u2014 no products, no ticket text. Ticket-RAG baseline uses the full ticket index. Hybrid has strictly more information.",
+    "graph_bias": "Majority of scored questions are GRAPH-primary by design; hybrid and ticket categories added in Section 12 expansion.",
+    "synthetic_data": "Tickets are seeded (random.seed(42)); no train/test leakage, but templates repeat phrasing."
+  }
+}

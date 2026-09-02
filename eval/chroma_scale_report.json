@@ -1,0 +1,97 @@
+{
+  "chromadb_version": "0.5.5",
+  "default_hnsw": {
+    "index_type": "HNSW (approximate nearest neighbor via hnswlib)",
+    "space": "l2",
+    "M": 16,
+    "construction_ef": 100,
+    "search_ef": 10,
+    "embedding_model": "ONNXMiniLM_L6_V2 (all-MiniLM-L6-v2, 384-dim)",
+    "persistence": "PersistentClient on-disk (chroma.sqlite3 + segment HNSW files)"
+  },
+  "ticket_index": {
+    "exists": true,
+    "path": "chroma_db",
+    "collection": "support_tickets",
+    "count": 200,
+    "metadata": {},
+    "dimension": 384,
+    "size_mb": 4.04,
+    "embedding_function": "ONNXMiniLM_L6_V2"
+  },
+  "baseline_index": {
+    "exists": true,
+    "path": "chroma_db_baseline",
+    "collection": "flat_baseline",
+    "count": 830,
+    "metadata": {},
+    "dimension": 384,
+    "size_mb": 11.91,
+    "embedding_function": "ONNXMiniLM_L6_V2"
+  },
+  "operations": [
+    {
+      "api": "collection.add(ids=...)",
+      "supported_by_chroma": "Inserts new ids; **duplicate ids are silently ignored** (original kept)",
+      "used_in_this_project": "Only path \u2014 `rag/build_index.py` bulk add after optional collection delete",
+      "effect_on_stale_data": "Re-running build without reset leaves old embeddings in place"
+    },
+    {
+      "api": "collection.upsert(ids=...)",
+      "supported_by_chroma": "Insert or replace by id (re-embeds document)",
+      "used_in_this_project": "**Not used** \u2014 no incremental ticket sync",
+      "effect_on_stale_data": "Would be the right API for single-ticket refresh if implemented"
+    },
+    {
+      "api": "collection.update(ids=...)",
+      "supported_by_chroma": "Update existing id (re-embeds if document changes)",
+      "used_in_this_project": "**Not used**",
+      "effect_on_stale_data": "N/A today"
+    },
+    {
+      "api": "collection.delete(ids=...)",
+      "supported_by_chroma": "Remove ids from index",
+      "used_in_this_project": "**Not used** \u2014 only whole-collection delete on rebuild",
+      "effect_on_stale_data": "Deleted tickets remain searchable until full rebuild"
+    },
+    {
+      "api": "client.delete_collection(...)",
+      "supported_by_chroma": "Drop entire collection",
+      "used_in_this_project": "`build_index(reset=True)` default before reload",
+      "effect_on_stale_data": "Full ticket index wipe; requires re-add of all tickets"
+    }
+  ],
+  "duplicate_id_behavior": {
+    "tested": true,
+    "add_same_id_twice": "Silently ignored \u2014 count unchanged, original document/metadata/embedding kept",
+    "upsert_same_id": "Replaces document/metadata and re-embeds",
+    "rebuild_without_reset": "Same as duplicate add \u2014 stale text persists",
+    "rebuild_with_reset": "delete_collection then add \u2014 correct fresh index"
+  },
+  "scale_projections": {
+    "10_000_tickets": {
+      "tier": "\u226410K (current demo scale)",
+      "query_latency": "Query time is dominated by **ONNX query embedding** (CPU) and Python client overhead, not HNSW search. At 200 tickets, retrieval is sub-second and was not the hybrid latency bottleneck (Section 11).",
+      "recall_implications": "HNSW with search_ef=10 is typically near-exact at this size; retrieval quality issues (e.g. order 10864 RR 0.0\u20130.5) are embedding/semantic, not index-approximation error.",
+      "operational_ops": "Full rebuild (`delete_collection` + `add`) is acceptable at this size."
+    },
+    "1_000_000_tickets": {
+      "tier": "100K\u20131M",
+      "query_latency": "HNSW search cost grows ~O(log n); expect milliseconds to tens of ms for ANN search on one collection. Query embedding still runs per request. Tune `hnsw:search_ef` upward if recall drops.",
+      "recall_implications": "**Approximate** \u2014 default search_ef=10 trades recall for speed. Theme queries with dozens of relevant tickets (Section 6) become harder to fully recall at small K regardless.",
+      "operational_ops": "Full rebuild gets slow (re-embed all tickets). Need `upsert` batches or partitioned collections (by date/customer) for incremental ingest."
+    },
+    "10_000_000_tickets": {
+      "tier": "1M\u201310M+",
+      "query_latency": "Single monolithic HNSW index may need sharding, dedicated embedding service, and higher search_ef. Consider metadata pre-filtering (customer_id, order_id) before vector search to shrink candidate set.",
+      "recall_implications": "ANN recall vs latency tradeoff becomes operational. Exact brute-force is not viable. Hybrid graph path becomes more important for identifier-heavy queries (order numbers).",
+      "operational_ops": "Require streaming upsert pipeline, tombstone deletes, and consistency contract with Neo4j ticket nodes."
+    }
+  },
+  "data_freshness_bridge": {
+    "runtime_ticket_update": "None \u2014 orchestrator only calls query_tickets(); no write path",
+    "ticket_text_source_of_truth": "data/support_tickets.json",
+    "neo4j_ticket_nodes": "graph/load_graph.py MERGE SupportTicket \u2014 full graph wipe on reload",
+    "consistency_model": "Batch rebuild only; graph and Chroma can drift if only one is refreshed"
+  }
+}

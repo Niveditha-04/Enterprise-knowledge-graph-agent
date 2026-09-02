@@ -1,0 +1,59 @@
+{
+  "section": 21,
+  "already_covered_elsewhere": {
+    "prompt_injection": "test_synthesis_prompt_injection.py (Section 8)",
+    "cypher_write_injection": "test_cypher_safety.py",
+    "malicious_cypher_repair": "test_nl_to_cypher_repair.py::test_malicious_repair_attempt_is_blocked",
+    "api_empty_question": "test_api_security.py::test_empty_question_returns_422",
+    "api_oversized_question_50000_chars": "test_api_security.py::test_oversized_question_returns_422",
+    "api_malformed_body": "test_api_security.py::test_malformed_body_returns_422",
+    "credential_leak": "test_api_security.py::test_internal_error_does_not_leak_secrets",
+    "routing_adversarial_cases": "eval/routing_cases.json (adversarial: true) + test_routing_eval.py"
+  },
+  "new_tests_this_section": {
+    "unknown_customer_orders": {
+      "question": "How many orders has customer ZZZZZ placed?",
+      "cypher": "MATCH (c:Customer {customer_id: 'ZZZZZ'})-[:PLACED]->(o:Order)\nRETURN count(o) AS order_count\nLIMIT 100",
+      "graph_results": [{"order_count": 0}],
+      "synthesis_answer": "Based on the graph evidence, customer ZZZZZ has placed 0 orders.",
+      "insufficient_evidence": false,
+      "verdict": "KNOWN GAP — misleading zero-count (same class as Employee/Invoice Section 12)"
+    },
+    "unknown_order_products": {
+      "question": "Which products are in order 99999999?",
+      "graph_results": [],
+      "synthesis_answer": "There is insufficient evidence to answer this question. No information about order 99999999 was found in the provided evidence.",
+      "insufficient_evidence": true,
+      "verdict": "PASS — refuses gracefully"
+    },
+    "unknown_product_id": {
+      "question": "What is the name of product with product ID 999999?",
+      "graph_results": [],
+      "synthesis_answer": "There is insufficient evidence to answer this question. No information about product ID 999999 is present in the provided evidence.",
+      "insufficient_evidence": true,
+      "verdict": "PASS — refuses gracefully"
+    },
+    "unknown_customer_country": {
+      "question": "What country is customer ZZZZZ from?",
+      "graph_results": [],
+      "synthesis_answer": "There is insufficient evidence to determine what country customer ZZZZZ is from.",
+      "insufficient_evidence": true,
+      "verdict": "PASS — refuses gracefully"
+    },
+    "empty_ticket_chunks": {
+      "synthesis_answer": "There is insufficient evidence to answer this question. No ticket evidence was provided.",
+      "insufficient_evidence": true,
+      "verdict": "PASS"
+    },
+    "malformed_ticket_result_empty_lists": {
+      "synthesis_answer": "There is insufficient evidence to summarize support tickets about delays. No ticket evidence was provided.",
+      "insufficient_evidence": true,
+      "verdict": "PASS"
+    },
+    "blank_ticket_text_chunk": {
+      "synthesis_answer": "There is insufficient evidence. The ticket contains no body text or description of what the customer reported.",
+      "insufficient_evidence": true,
+      "verdict": "PASS"
+    }
+  }
+}
