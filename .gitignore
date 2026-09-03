@@ -11,3 +11,4 @@ chroma_db_baseline/
 .vscode/
 *.log
 :memory:.ses  # stray SQLite/session artifact (literal :memory: filename written to disk)
+viz/output/
