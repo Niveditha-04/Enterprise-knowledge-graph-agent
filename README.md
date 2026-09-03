@@ -165,6 +165,10 @@ Benchmark: **25** hand-verified questions in `eval/evaluation_set.json` (**23 sc
 
 Expected answers were verified against live Neo4j queries and ticket text inspection (`eval/evaluation_audit.py`).
 
+![Benchmark accuracy](viz/output/benchmark_accuracy.png)
+
+*Read-only chart from `viz/build_charts.py` (eval JSON + CSVs, no LLM). [All charts →](viz/output/index.html)*
+
 ### Methodology (current harness)
 
 `eval/run_evaluation.py` checks whether the expected substring appears in:
