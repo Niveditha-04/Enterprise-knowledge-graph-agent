@@ -1,0 +1,40 @@
+@prefix o2c: <http://example.org/o2c#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+o2c:BILLED_AS a owl:ObjectProperty ;
+    rdfs:domain o2c:Order ;
+    rdfs:range o2c:Invoice .
+
+o2c:CONTAINS a owl:ObjectProperty ;
+    rdfs:domain o2c:Order ;
+    rdfs:range o2c:Product .
+
+o2c:FILED a owl:ObjectProperty ;
+    rdfs:domain o2c:Customer ;
+    rdfs:range o2c:SupportTicket .
+
+o2c:HANDLED a owl:ObjectProperty ;
+    rdfs:domain o2c:Employee ;
+    rdfs:range o2c:Order .
+
+o2c:PLACED a owl:ObjectProperty ;
+    rdfs:domain o2c:Customer ;
+    rdfs:range o2c:Order .
+
+o2c:REFERENCES a owl:ObjectProperty ;
+    rdfs:domain o2c:SupportTicket ;
+    rdfs:range o2c:Order .
+
+o2c:Employee a owl:Class .
+
+o2c:Invoice a owl:Class .
+
+o2c:Product a owl:Class .
+
+o2c:Customer a owl:Class .
+
+o2c:SupportTicket a owl:Class .
+
+o2c:Order a owl:Class .
+
