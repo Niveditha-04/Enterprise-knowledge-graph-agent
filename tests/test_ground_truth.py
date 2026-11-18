@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from eval.answer_checks import contains_expected
-from eval.evaluation_audit import audit_evaluation_set
+from eval.verify_ground_truth import audit_evaluation_set
 
 pytestmark = pytest.mark.neo4j
 

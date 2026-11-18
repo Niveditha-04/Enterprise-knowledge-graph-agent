@@ -152,6 +152,6 @@ def format_audit_report(report: dict) -> str:
 if __name__ == "__main__":
     report = audit_evaluation_set()
     print(format_audit_report(report))
-    out = Path(__file__).parent / "evaluation_audit_report.json"
+    out = Path(__file__).parent / "ground_truth_report.json"
     out.write_text(json.dumps(report, indent=2) + "\n")
     print(f"\nWrote {out}")

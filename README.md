@@ -18,18 +18,18 @@ It is a research demo, not a production service.
 
 ![Benchmark accuracy](viz/output/benchmark_accuracy.png)
 
-Source: `eval/evaluation_report.json`, `eval/evaluation_audit_report.json`, `data/*.csv`.
+Source: `eval/evaluation_report.json`, `eval/ground_truth_report.json`, `data/*.csv`.
 
 ## Example questions
 
-Verified against `eval/evaluation_set.json` and `eval/evaluation_audit_report.json`.
+Verified against `eval/evaluation_set.json` and `eval/ground_truth_report.json`.
 
-| Route | Question | Answer |
+| Route | Question | Verified answer |
 |---|---|---|
 | GRAPH | How many orders has customer ALFKI placed? | 6 orders |
 | TICKETS | Which tickets mention damaged products? | 38 tickets |
-| BOTH | Did customer SAVEA file a ticket mentioning carrier delays? | Yes, 1 ticket |
-| Unsupported | What is the CEO's email address? | Refuses: no such field in the graph or tickets |
+| BOTH | Did customer SAVEA file any support tickets mentioning carrier delays? | Yes, 1 ticket |
+| GRAPH | What is the CEO's email address? | Refuses: no such field in the graph or tickets |
 
 ## How it works
 
