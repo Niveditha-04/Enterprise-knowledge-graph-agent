@@ -43,7 +43,7 @@ def chart_benchmark_accuracy(out: Path) -> Path:
     fig, ax = plt.subplots(figsize=(9, 5))
     colors = ["#2ecc71" if "Synthesis" in lbl or "Hybrid" in lbl else "#95a5a6" for lbl in labels]
     bars = ax.barh(labels, pcts, color=colors)
-    ax.set_xlim(0, 105)
+    ax.set_xlim(0, 112)
     ax.set_xlabel("Accuracy (%)")
     ax.set_title("Evaluation benchmark (23 scored questions)")
     ax.invert_yaxis()
