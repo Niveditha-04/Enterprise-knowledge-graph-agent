@@ -1,0 +1,13 @@
+venv/
+.venv/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+chroma_db/
+chroma_db_baseline/
+.DS_Store
+.idea/
+.vscode/
+*.log
+:memory:.ses  # stray SQLite/session artifact (literal :memory: filename written to disk)
