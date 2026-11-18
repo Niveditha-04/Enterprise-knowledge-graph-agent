@@ -1,0 +1,128 @@
+[
+  {
+    "id": "lookup_alfki_country",
+    "category": "simple_lookup",
+    "question": "What country is customer ALFKI from?",
+    "ground_truth_query": "MATCH (c:Customer {customer_id: 'ALFKI'}) RETURN c.country AS country",
+    "expected": {"type": "string", "value": "Germany"}
+  },
+  {
+    "id": "lookup_chai_name",
+    "category": "simple_lookup",
+    "question": "What is the name of product with product ID 1?",
+    "ground_truth_query": "MATCH (p:Product {product_id: 1}) RETURN p.product_name AS name",
+    "expected": {"type": "string", "value": "Chai"}
+  },
+  {
+    "id": "count_vinet_orders",
+    "category": "count",
+    "question": "How many orders has customer VINET placed?",
+    "ground_truth_query": "MATCH (c:Customer {customer_id: 'VINET'})-[:PLACED]->(o:Order) RETURN count(o) AS n",
+    "expected": {"type": "int", "value": 5}
+  },
+  {
+    "id": "count_total_customers",
+    "category": "count",
+    "question": "How many customers are in the database?",
+    "ground_truth_query": "MATCH (c:Customer) RETURN count(c) AS n",
+    "expected": {"type": "int", "value": 91}
+  },
+  {
+    "id": "agg_most_orders_customer",
+    "category": "aggregation",
+    "question": "Which customer has placed the most orders?",
+    "ground_truth_query": "MATCH (c:Customer)-[:PLACED]->(o:Order) RETURN c.customer_id AS customer_id, count(o) AS n ORDER BY n DESC LIMIT 1",
+    "expected": {"type": "string", "value": "SAVEA"}
+  },
+  {
+    "id": "agg_most_orders_count",
+    "category": "aggregation",
+    "question": "How many orders has the customer with the most orders placed?",
+    "ground_truth_query": "MATCH (c:Customer)-[:PLACED]->(o:Order) RETURN c.customer_id AS customer_id, count(o) AS n ORDER BY n DESC LIMIT 1",
+    "expected": {"type": "int", "value": 31}
+  },
+  {
+    "id": "filter_brazil",
+    "category": "filtering",
+    "question": "How many customers are in Brazil?",
+    "ground_truth_query": "MATCH (c:Customer {country: 'Brazil'}) RETURN count(c) AS n",
+    "expected": {"type": "int", "value": 9}
+  },
+  {
+    "id": "filter_germany",
+    "category": "filtering",
+    "question": "How many customers are in Germany?",
+    "ground_truth_query": "MATCH (c:Customer {country: 'Germany'}) RETURN count(c) AS n",
+    "expected": {"type": "int", "value": 11}
+  },
+  {
+    "id": "sort_top3_expensive",
+    "category": "sorting",
+    "question": "What are the 3 most expensive products?",
+    "ground_truth_query": "MATCH (p:Product) RETURN p.product_name AS name ORDER BY p.unit_price DESC LIMIT 3",
+    "expected": {"type": "string_set", "value": ["Côte de Blaye", "Thüringer Rostbratwurst", "Mishi Kobe Niku"]}
+  },
+  {
+    "id": "sort_top3_cheapest",
+    "category": "sorting",
+    "question": "What are the 3 cheapest products by unit price?",
+    "ground_truth_query": "MATCH (p:Product) RETURN p.product_name AS name ORDER BY p.unit_price ASC LIMIT 3",
+    "expected": {"type": "string_set", "value": ["Geitost", "Guaraná Fantástica", "Konbu"]}
+  },
+  {
+    "id": "rel_products_order_10248",
+    "category": "relationship_traversal",
+    "question": "Which products are in order 10248?",
+    "ground_truth_query": "MATCH (o:Order {order_id: 10248})-[:CONTAINS]->(p:Product) RETURN p.product_name AS name ORDER BY p.product_id",
+    "expected": {"type": "string_set", "value": ["Queso Cabrales", "Singaporean Hokkien Fried Mee", "Mozzarella di Giovanni"]}
+  },
+  {
+    "id": "rel_customer_order_10248",
+    "category": "relationship_traversal",
+    "question": "Which customer placed order 10248?",
+    "ground_truth_query": "MATCH (c:Customer)-[:PLACED]->(o:Order {order_id: 10248}) RETURN c.customer_id AS customer_id",
+    "expected": {"type": "string", "value": "VINET"}
+  },
+  {
+    "id": "multihop_ticket_chai_count",
+    "category": "multi_hop",
+    "question": "How many distinct customers have filed support tickets about orders that contain the product Chai?",
+    "ground_truth_query": "MATCH (c:Customer)-[:FILED]->(:SupportTicket)-[:REFERENCES]->(:Order)-[:CONTAINS]->(p:Product {product_name: 'Chai'}) RETURN count(DISTINCT c.customer_id) AS n",
+    "expected": {"type": "int", "value": 9}
+  },
+  {
+    "id": "multihop_ticket_chai_includes_savea",
+    "category": "multi_hop",
+    "question": "Has customer SAVEA filed a support ticket referencing an order that contains Chai?",
+    "ground_truth_query": "MATCH (c:Customer {customer_id: 'SAVEA'})-[:FILED]->(:SupportTicket)-[:REFERENCES]->(:Order)-[:CONTAINS]->(p:Product {product_name: 'Chai'}) RETURN count(*) > 0 AS yes",
+    "expected": {"type": "bool", "value": true}
+  },
+  {
+    "id": "unsupported_favorite_color",
+    "category": "unsupported",
+    "question": "What is customer ALFKI's favorite color?",
+    "ground_truth_query": null,
+    "expected": {"type": "unsupported"}
+  },
+  {
+    "id": "unsupported_credit_score",
+    "category": "unsupported",
+    "question": "What is the credit score for customer VINET?",
+    "ground_truth_query": null,
+    "expected": {"type": "unsupported"}
+  },
+  {
+    "id": "ambiguous_top_customer",
+    "category": "ambiguous",
+    "question": "Show me the top customer.",
+    "ground_truth_query": null,
+    "expected": {"type": "ambiguous"}
+  },
+  {
+    "id": "ambiguous_best_order",
+    "category": "ambiguous",
+    "question": "Which order is the best?",
+    "ground_truth_query": null,
+    "expected": {"type": "ambiguous"}
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "graph_count_customers",
+    "question": "How many customers are in the database?",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "rationale": "Pure aggregate over Customer nodes; no ticket text needed."
+  },
+  {
+    "id": "graph_alfki_country",
+    "question": "What country is customer ALFKI from?",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "rationale": "Single customer property lookup from structured graph data."
+  },
+  {
+    "id": "graph_most_orders",
+    "question": "Which customer has placed the most orders?",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "rationale": "Aggregation over PLACED relationships; purely structured."
+  },
+  {
+    "id": "graph_products_order_10248",
+    "question": "Which products are in order 10248?",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "rationale": "Order-to-product traversal via CONTAINS; no ticket narrative."
+  },
+  {
+    "id": "graph_catalog_size",
+    "question": "How many products are in the catalog?",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "rationale": "Count of Product nodes only."
+  },
+  {
+    "id": "tickets_damaged_products",
+    "question": "Which support tickets mention that products arrived damaged?",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "rationale": "Requires searching free-text ticket narratives for damage descriptions."
+  },
+  {
+    "id": "tickets_carrier_investigations",
+    "question": "What wording do customers use when reporting carrier delay investigations?",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "rationale": "Asks for language from ticket bodies, not structured order fields."
+  },
+  {
+    "id": "tickets_invoice_complaints",
+    "question": "Summarize the invoice correction complaints described in support tickets.",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "rationale": "Needs semantic retrieval over ticket text about pricing discrepancies."
+  },
+  {
+    "id": "tickets_refund_disputes",
+    "question": "Which tickets describe customers disputing charges and requesting refunds?",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "rationale": "Refund/charge dispute details live in ticket narrative, not graph schema."
+  },
+  {
+    "id": "tickets_no_response",
+    "question": "Find tickets where customers complained about no response after several business days.",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "rationale": "Specific complaint phrasing is only in unstructured ticket text."
+  },
+  {
+    "id": "both_chai_damaged_customers",
+    "question": "Which customers who ordered Chai also filed support tickets about damaged products?",
+    "expected_route": "BOTH",
+    "clear": true,
+    "rationale": "Needs graph traversal for Chai orders plus ticket-text search for damage."
+  },
+  {
+    "id": "both_carrier_delay_countries",
+    "question": "What countries are the customers from who reported carrier delays in their support tickets?",
+    "expected_route": "BOTH",
+    "clear": true,
+    "rationale": "Carrier delay signal is in ticket text; country is a Customer graph property."
+  },
+  {
+    "id": "both_order_10864_products_and_issue",
+    "question": "For order 10864, which products were on the order and what issue did the customer report in their ticket?",
+    "expected_route": "BOTH",
+    "clear": true,
+    "rationale": "Product list from order graph; issue description from linked ticket text."
+  },
+  {
+    "id": "both_top_customers_pricing_tickets",
+    "question": "Among the top 5 customers by order volume, who has support tickets mentioning pricing discrepancies?",
+    "expected_route": "BOTH",
+    "clear": true,
+    "rationale": "Top customers by order count is a graph aggregation; pricing complaints are in ticket text."
+  },
+  {
+    "id": "both_vinet_order_and_ticket",
+    "question": "For customer VINET, list their recent orders and summarize what they reported in support tickets.",
+    "expected_route": "BOTH",
+    "clear": true,
+    "rationale": "Orders from graph relationships; ticket summaries require unstructured text retrieval."
+  },
+  {
+    "id": "ambiguous_savea_overview",
+    "question": "Tell me everything about customer SAVEA.",
+    "expected_route": null,
+    "clear": false,
+    "defensible_routes": ["GRAPH", "BOTH"],
+    "rationale": "Could mean structured profile/orders only (GRAPH) or profile plus support history (BOTH)."
+  },
+  {
+    "id": "ambiguous_support_ticket_count_savea",
+    "question": "How many support tickets has customer SAVEA filed?",
+    "expected_route": null,
+    "clear": false,
+    "defensible_routes": ["GRAPH", "TICKETS"],
+    "rationale": "Countable via FILED relationships in the graph, but a router may treat any ticket question as TICKETS."
+  },
+  {
+    "id": "ambiguous_carrier_delay_orders",
+    "question": "Which orders had carrier delay issues?",
+    "expected_route": null,
+    "clear": false,
+    "defensible_routes": ["TICKETS", "BOTH"],
+    "rationale": "Carrier delay is only expressed in ticket text; linking to orders may warrant BOTH or ticket-only search."
+  },
+  {
+    "id": "adv_graph_ticket_ids_by_customer",
+    "question": "List the support ticket IDs filed by customer KOENE.",
+    "expected_route": "GRAPH",
+    "clear": true,
+    "adversarial": true,
+    "rationale": "Sounds ticket/RAG-oriented, but ticket_id and FILED links are structured graph data — no free-text search needed."
+  },
+  {
+    "id": "adv_both_carrier_order_count",
+    "question": "How many distinct orders have carrier delay complaints recorded in support tickets?",
+    "expected_route": "BOTH",
+    "clear": true,
+    "adversarial": true,
+    "rationale": "Superficially a count query (GRAPH), but 'carrier delay complaints' only appear in ticket narrative text before linking to orders."
+  },
+  {
+    "id": "adv_tickets_complaint_on_order",
+    "question": "What problem did the customer report on order 10701?",
+    "expected_route": "TICKETS",
+    "clear": true,
+    "adversarial": true,
+    "rationale": "Mentions a specific order ID (suggesting GRAPH), but the answer is the complaint narrative from ticket text, not order line items."
+  }
+]

@@ -1,0 +1,226 @@
+{
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm",
+    "neo4j": "Neo4j 5.24 Community in Docker (local container kg-agent-neo4j)",
+    "chroma": "ChromaDB persistent local index at ./chroma_db",
+    "anthropic_api": "Claude Sonnet 4.5 via Anthropic API (network latency included)",
+    "load_model": "Single sequential requests, no concurrency",
+    "cpu": "Apple M4",
+    "memory_gb": "16 GB"
+  },
+  "disclaimer": "Local single-machine latency with sequential requests and no concurrent load. Not production latency. Includes network round-trips to Anthropic API.",
+  "runs_per_case": 3,
+  "inter_run_delay_s": 5,
+  "max_retry_attempts": 2,
+  "wall_clock_seconds": 99.23793987499084,
+  "aggregate": {
+    "completed_requests": 9,
+    "failed_or_skipped_requests": 0,
+    "total_request_latency_ms": 69128.25312603673,
+    "total_api_throttling_overhead_ms": 0.0
+  },
+  "retry_events": [],
+  "failed_runs": [],
+  "aborted_due_to_rate_limit": false,
+  "abort_reason": null,
+  "cases": [
+    {
+      "id": "graph_count_customers",
+      "expected_route": "GRAPH",
+      "question": "How many customers are there?",
+      "runs_requested": 3,
+      "runs_completed": 3,
+      "runs_failed": 0,
+      "routes_observed": [
+        "GRAPH",
+        "GRAPH",
+        "GRAPH"
+      ],
+      "component_stats_ms": {
+        "routing": {
+          "count": 3,
+          "avg_ms": 5542.933305667248,
+          "median_ms": 2994.407334001153,
+          "p95_ms": 10792.776907797086
+        },
+        "cypher_generation": {
+          "count": 3,
+          "avg_ms": 2047.504944668617,
+          "median_ms": 1963.1014170008712,
+          "p95_ms": 2266.8490545038367
+        },
+        "cypher_repair": {
+          "count": 3,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "neo4j_execution": {
+          "count": 3,
+          "avg_ms": 56.17549999927481,
+          "median_ms": 71.17004200699739,
+          "p95_ms": 83.82595449656945
+        },
+        "chroma_retrieval": {
+          "count": 0,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "synthesis": {
+          "count": 3,
+          "avg_ms": 1578.646597326345,
+          "median_ms": 1490.4394579934888,
+          "p95_ms": 1782.8537707900978
+        },
+        "total": {
+          "count": 3,
+          "avg_ms": 9235.474847334748,
+          "median_ms": 6468.282625006395,
+          "p95_ms": 14194.71306310006
+        }
+      },
+      "api_throttling_overhead_ms": {
+        "per_run": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total": 0.0
+      }
+    },
+    {
+      "id": "tickets_damaged_products",
+      "expected_route": "TICKETS",
+      "question": "Which support tickets mention that products arrived damaged?",
+      "runs_requested": 3,
+      "runs_completed": 3,
+      "runs_failed": 0,
+      "routes_observed": [
+        "TICKETS",
+        "TICKETS",
+        "TICKETS"
+      ],
+      "component_stats_ms": {
+        "routing": {
+          "count": 3,
+          "avg_ms": 1287.804666668914,
+          "median_ms": 1217.5480840087403,
+          "p95_ms": 1427.6525206005317
+        },
+        "cypher_generation": {
+          "count": 0,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "cypher_repair": {
+          "count": 0,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "neo4j_execution": {
+          "count": 0,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "chroma_retrieval": {
+          "count": 3,
+          "avg_ms": 782.9432223322025,
+          "median_ms": 183.40608400467318,
+          "p95_ms": 1852.720608396339
+        },
+        "synthesis": {
+          "count": 3,
+          "avg_ms": 4254.132583339621,
+          "median_ms": 2234.665958007099,
+          "p95_ms": 7703.920283907791
+        },
+        "total": {
+          "count": 3,
+          "avg_ms": 6334.192514007252,
+          "median_ms": 3859.7364580055,
+          "p95_ms": 10784.838058610329
+        }
+      },
+      "api_throttling_overhead_ms": {
+        "per_run": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total": 0.0
+      }
+    },
+    {
+      "id": "both_chai_damaged_customers",
+      "expected_route": "BOTH",
+      "question": "Which customers who ordered Chai also filed support tickets about damaged products?",
+      "runs_requested": 3,
+      "runs_completed": 3,
+      "runs_failed": 0,
+      "routes_observed": [
+        "BOTH",
+        "BOTH",
+        "BOTH"
+      ],
+      "component_stats_ms": {
+        "routing": {
+          "count": 3,
+          "avg_ms": 1834.240486001363,
+          "median_ms": 1824.3786249950062,
+          "p95_ms": 1931.503375005559
+        },
+        "cypher_generation": {
+          "count": 3,
+          "avg_ms": 2948.5391530033667,
+          "median_ms": 2971.632667002268,
+          "p95_ms": 3003.5134048070177
+        },
+        "cypher_repair": {
+          "count": 3,
+          "avg_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "neo4j_execution": {
+          "count": 3,
+          "avg_ms": 124.44473633756085,
+          "median_ms": 32.72925000055693,
+          "p95_ms": 284.5897131046513
+        },
+        "chroma_retrieval": {
+          "count": 3,
+          "avg_ms": 142.63406966832312,
+          "median_ms": 131.5671670017764,
+          "p95_ms": 209.06946639734085
+        },
+        "synthesis": {
+          "count": 3,
+          "avg_ms": 2415.006417000162,
+          "median_ms": 2425.471375012421,
+          "p95_ms": 2472.5169255994842
+        },
+        "total": {
+          "count": 3,
+          "avg_ms": 7473.083680670243,
+          "median_ms": 7542.258542001946,
+          "p95_ms": 7645.312966399069
+        }
+      },
+      "api_throttling_overhead_ms": {
+        "per_run": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total": 0.0
+      }
+    }
+  ]
+}

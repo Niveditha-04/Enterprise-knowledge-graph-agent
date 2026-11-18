@@ -1,0 +1,380 @@
+{
+  "source": "eval/evaluation_report.json",
+  "scored_items": 23,
+  "wall_clock_seconds": 1337.3489359590021,
+  "routing_accuracy": 1.0,
+  "systems": {
+    "hybrid": {
+      "label": "Hybrid (evidence text: graph rows + ticket docs)",
+      "correct": 23,
+      "total": 23,
+      "accuracy": 1.0
+    },
+    "synthesis": {
+      "label": "Synthesis NL answer (what the user sees)",
+      "correct": 22,
+      "total": 23,
+      "accuracy": 0.9565217391304348
+    },
+    "graph_branch": {
+      "label": "Graph branch only",
+      "correct": 17,
+      "total": 23,
+      "accuracy": 0.7391304347826086
+    },
+    "ticket_branch": {
+      "label": "Ticket branch only (when routed)",
+      "correct": 5,
+      "total": 23,
+      "accuracy": 0.21739130434782608
+    },
+    "flat_baseline": {
+      "label": "Flat RAG (order sentences)",
+      "correct": 5,
+      "total": 23,
+      "accuracy": 0.21739130434782608
+    },
+    "ticket_baseline": {
+      "label": "Ticket RAG baseline",
+      "correct": 7,
+      "total": 23,
+      "accuracy": 0.30434782608695654
+    }
+  },
+  "by_category": {
+    "aggregation": {
+      "total": 3,
+      "hybrid": 3,
+      "synthesis": 3,
+      "graph_branch": 3,
+      "ticket_branch": 0,
+      "flat_baseline": 0,
+      "ticket_baseline": 0
+    },
+    "counting": {
+      "total": 7,
+      "hybrid": 7,
+      "synthesis": 7,
+      "graph_branch": 7,
+      "ticket_branch": 0,
+      "flat_baseline": 2,
+      "ticket_baseline": 1
+    },
+    "entity_lookup": {
+      "total": 2,
+      "hybrid": 2,
+      "synthesis": 2,
+      "graph_branch": 2,
+      "ticket_branch": 0,
+      "flat_baseline": 1,
+      "ticket_baseline": 1
+    },
+    "filtering": {
+      "total": 2,
+      "hybrid": 2,
+      "synthesis": 2,
+      "graph_branch": 2,
+      "ticket_branch": 0,
+      "flat_baseline": 2,
+      "ticket_baseline": 0
+    },
+    "graph_traversal": {
+      "total": 1,
+      "hybrid": 1,
+      "synthesis": 1,
+      "graph_branch": 1,
+      "ticket_branch": 0,
+      "flat_baseline": 0,
+      "ticket_baseline": 0
+    },
+    "hybrid": {
+      "total": 3,
+      "hybrid": 3,
+      "synthesis": 2,
+      "graph_branch": 2,
+      "ticket_branch": 2,
+      "flat_baseline": 0,
+      "ticket_baseline": 2
+    },
+    "ticket_retrieval": {
+      "total": 3,
+      "hybrid": 3,
+      "synthesis": 3,
+      "graph_branch": 0,
+      "ticket_branch": 3,
+      "flat_baseline": 0,
+      "ticket_baseline": 3
+    },
+    "unsupported": {
+      "total": 2,
+      "hybrid": 2,
+      "synthesis": 2,
+      "graph_branch": 0,
+      "ticket_branch": 0,
+      "flat_baseline": 0,
+      "ticket_baseline": 0
+    }
+  },
+  "deltas": {
+    "hybrid_over_graph_branch": {
+      "count": 6,
+      "cases": [
+        {
+          "id": "ticket_damaged_products",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Which tickets mention damaged products?"
+        },
+        {
+          "id": "ticket_carrier_delays",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Which orders had carrier delay issues?"
+        },
+        {
+          "id": "hybrid_savea_carrier_ticket",
+          "category": "hybrid",
+          "route": "BOTH",
+          "question": "Did customer SAVEA file any support tickets mentioning carrier delays?"
+        },
+        {
+          "id": "ticket_vinet_invoice",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Did customer VINET request an invoice correction in a support ticket?"
+        },
+        {
+          "id": "unsupported_ceo_email",
+          "category": "unsupported",
+          "route": "GRAPH",
+          "question": "What is the CEO's email address?"
+        },
+        {
+          "id": "unsupported_employee_count",
+          "category": "unsupported",
+          "route": "GRAPH",
+          "question": "How many employees work at the company?"
+        }
+      ],
+      "interpretation": "Hybrid evidence match exceeds graph-only when ticket text (or synthesis refusal on unsupported questions) supplies the matching substring graph rows alone do not."
+    },
+    "graph_over_flat_rag": {
+      "count": 12,
+      "cases": [
+        {
+          "id": "count_total_orders",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many total orders are in the system?"
+        },
+        {
+          "id": "count_customers",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many customers are there?"
+        },
+        {
+          "id": "traverse_chai_orders",
+          "category": "graph_traversal",
+          "route": "GRAPH",
+          "question": "How many orders contain the product Chai?"
+        },
+        {
+          "id": "agg_top_ordering_customer",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "Which customer has placed the most orders?"
+        },
+        {
+          "id": "count_support_tickets",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many support tickets are there?"
+        },
+        {
+          "id": "agg_multi_ticket_customers",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "How many customers have filed more than one support ticket?"
+        },
+        {
+          "id": "lookup_order_10248_customer",
+          "category": "entity_lookup",
+          "route": "GRAPH",
+          "question": "Which customer placed order 10248?"
+        },
+        {
+          "id": "count_products",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many products are in the catalog?"
+        },
+        {
+          "id": "agg_most_expensive_product",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "What is the most expensive product?"
+        },
+        {
+          "id": "count_vinet_orders",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many orders has customer VINET placed?"
+        },
+        {
+          "id": "hybrid_chai_damaged_count",
+          "category": "hybrid",
+          "route": "BOTH",
+          "question": "How many distinct customers ordered Chai and also filed support tickets about damaged products?"
+        },
+        {
+          "id": "hybrid_chai_damaged_example",
+          "category": "hybrid",
+          "route": "BOTH",
+          "question": "Name one customer who ordered Chai and filed a ticket about damaged products."
+        }
+      ],
+      "interpretation": "Structured Cypher over Neo4j succeeds where flat order-sentence RAG lacks products, ticket nodes, aggregations, and global counts."
+    },
+    "graph_over_ticket_rag": {
+      "count": 14,
+      "cases": [
+        {
+          "id": "count_alfki_orders",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many orders has customer ALFKI placed?"
+        },
+        {
+          "id": "count_germany_customers",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many customers are in Germany?"
+        },
+        {
+          "id": "count_total_orders",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many total orders are in the system?"
+        },
+        {
+          "id": "count_customers",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many customers are there?"
+        },
+        {
+          "id": "traverse_chai_orders",
+          "category": "graph_traversal",
+          "route": "GRAPH",
+          "question": "How many orders contain the product Chai?"
+        },
+        {
+          "id": "agg_top_ordering_customer",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "Which customer has placed the most orders?"
+        },
+        {
+          "id": "count_support_tickets",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many support tickets are there?"
+        },
+        {
+          "id": "agg_multi_ticket_customers",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "How many customers have filed more than one support ticket?"
+        },
+        {
+          "id": "filter_france_customers",
+          "category": "filtering",
+          "route": "GRAPH",
+          "question": "How many customers are in France?"
+        },
+        {
+          "id": "lookup_order_10248_customer",
+          "category": "entity_lookup",
+          "route": "GRAPH",
+          "question": "Which customer placed order 10248?"
+        },
+        {
+          "id": "count_products",
+          "category": "counting",
+          "route": "GRAPH",
+          "question": "How many products are in the catalog?"
+        },
+        {
+          "id": "agg_most_expensive_product",
+          "category": "aggregation",
+          "route": "GRAPH",
+          "question": "What is the most expensive product?"
+        },
+        {
+          "id": "filter_brazil_customers",
+          "category": "filtering",
+          "route": "GRAPH",
+          "question": "How many customers are in Brazil?"
+        },
+        {
+          "id": "hybrid_chai_damaged_count",
+          "category": "hybrid",
+          "route": "BOTH",
+          "question": "How many distinct customers ordered Chai and also filed support tickets about damaged products?"
+        }
+      ],
+      "interpretation": "Graph branch carries counting, aggregation, traversal, and catalog lookups that ticket semantic search cannot answer from text alone."
+    },
+    "ticket_rag_over_graph": {
+      "count": 4,
+      "cases": [
+        {
+          "id": "ticket_damaged_products",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Which tickets mention damaged products?"
+        },
+        {
+          "id": "ticket_carrier_delays",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Which orders had carrier delay issues?"
+        },
+        {
+          "id": "hybrid_savea_carrier_ticket",
+          "category": "hybrid",
+          "route": "BOTH",
+          "question": "Did customer SAVEA file any support tickets mentioning carrier delays?"
+        },
+        {
+          "id": "ticket_vinet_invoice",
+          "category": "ticket_retrieval",
+          "route": "TICKETS",
+          "question": "Did customer VINET request an invoice correction in a support ticket?"
+        }
+      ],
+      "interpretation": "Ticket index wins when the answer lives only in free-text ticket bodies and graph rows do not surface the substring."
+    },
+    "evidence_vs_synthesis_gap": {
+      "count": 1,
+      "cases": [
+        {
+          "id": "hybrid_chai_damaged_example",
+          "category": "hybrid",
+          "question": "Name one customer who ordered Chai and filed a ticket about damaged products."
+        }
+      ],
+      "interpretation": "Evidence retrieved correctly but NL synthesis did not deliver the answer (over-refusal / conservative synthesis)."
+    }
+  },
+  "category_takeaways": {
+    "counting": "Graph 7/7 vs flat 2/7: flat RAG only indexes order sentences, so global counts (customers, products, tickets, total orders) and per-customer order counts beyond lucky substring hits require Cypher.",
+    "aggregation": "Graph 3/3 vs flat 0/3: MAX/COUNT/GROUP BY over relationships (top customer, multi-ticket customers, most expensive product) are structurally impossible for flat order-text retrieval.",
+    "filtering": "Graph 2/2 vs flat 2/2: country filters can accidentally match order-address text in flat RAG; graph and flat tie here \u2014 not a graph advantage category on this small set.",
+    "graph_traversal": "Graph 1/1 vs flat 0/1: product-in-order joins (Chai order count) need the CONTAINS relationship, absent from flat index.",
+    "ticket_retrieval": "Ticket RAG 3/3 vs graph 0/3: keyword/semantic ticket search; graph has ticket nodes but not ticket body text in returned properties for these questions.",
+    "hybrid": "Hybrid 3/3: multi-hop Cypher plus ticket text; ticket RAG alone 2/3 (misses pure count join). Graph alone 2/3 on scored hybrid items.",
+    "unsupported": "Refusal checks: synthesis guard + CEO-email style refusals; neither flat nor ticket RAG passes."
+  }
+}
